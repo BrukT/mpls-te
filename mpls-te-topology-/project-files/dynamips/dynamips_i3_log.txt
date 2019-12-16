@@ -1,19 +1,19 @@
-Dec 16 10:12:58.544 HYPERVISOR: Release 0.2.18-amd64/Linux (tag 2018033112)
-Dec 16 10:12:58.544 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 39545.
-Dec 16 10:12:58.552 HYPERVISOR: exec_cmd: hypervisor version 
-Dec 16 10:12:58.553 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips 
-Dec 16 10:12:58.553 GENERAL: working_dir=/home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips
-Dec 16 10:12:58.554 HYPERVISOR: exec_cmd: ethsw create Net-B 
-Dec 16 10:12:58.586 HYPERVISOR: exec_cmd: nio create_udp udp-ffb2178b-562b-4564-9fe0-d085afc564d5 10000 127.0.0.1 10001 
-Dec 16 10:12:58.587 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-ffb2178b-562b-4564-9fe0-d085afc564d5 
-Dec 16 10:12:58.600 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-ffb2178b-562b-4564-9fe0-d085afc564d5 1 
-Dec 16 10:12:58.624 HYPERVISOR: exec_cmd: nio create_udp udp-692f918e-a0e2-4d08-81d2-87fa36b7f22d 10002 127.0.0.1 10003 
-Dec 16 10:12:58.625 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-692f918e-a0e2-4d08-81d2-87fa36b7f22d 
-Dec 16 10:12:58.640 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-692f918e-a0e2-4d08-81d2-87fa36b7f22d 1 
-Dec 16 10:12:58.678 HYPERVISOR: exec_cmd: nio create_udp udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 10004 127.0.0.1 10005 
-Dec 16 10:12:58.679 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 
-Dec 16 10:12:58.680 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 1 
-Dec 16 11:40:24.782 HYPERVISOR: exec_cmd: ethsw delete Net-B 
-Dec 16 11:40:24.833 HYPERVISOR: exec_cmd: hypervisor stop 
-Dec 16 11:40:25.235 HYPERVISOR: Stopped.
-Dec 16 11:40:25.236 GENERAL: reset done.
+Dec 16 11:44:29.865 HYPERVISOR: Release 0.2.18-amd64/Linux (tag 2018033112)
+Dec 16 11:44:29.865 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 60437.
+Dec 16 11:44:29.875 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 16 11:44:29.875 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips 
+Dec 16 11:44:29.875 GENERAL: working_dir=/home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips
+Dec 16 11:44:29.876 HYPERVISOR: exec_cmd: ethsw create Net-B 
+Dec 16 11:44:29.903 HYPERVISOR: exec_cmd: nio create_udp udp-ace05c57-2c33-40ab-b79e-3d8473f8806b 10000 127.0.0.1 10001 
+Dec 16 11:44:29.903 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-ace05c57-2c33-40ab-b79e-3d8473f8806b 
+Dec 16 11:44:29.905 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-ace05c57-2c33-40ab-b79e-3d8473f8806b 1 
+Dec 16 11:44:29.931 HYPERVISOR: exec_cmd: nio create_udp udp-e378a15b-1a17-4bd5-b880-48dbca5ca981 10002 127.0.0.1 10003 
+Dec 16 11:44:29.931 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-e378a15b-1a17-4bd5-b880-48dbca5ca981 
+Dec 16 11:44:29.946 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-e378a15b-1a17-4bd5-b880-48dbca5ca981 1 
+Dec 16 11:44:29.979 HYPERVISOR: exec_cmd: nio create_udp udp-603526e2-947d-443e-b9fb-6911e66a7b0e 10004 127.0.0.1 10005 
+Dec 16 11:44:29.979 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-603526e2-947d-443e-b9fb-6911e66a7b0e 
+Dec 16 11:44:29.987 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-603526e2-947d-443e-b9fb-6911e66a7b0e 1 
+Dec 16 11:54:05.777 HYPERVISOR: exec_cmd: ethsw delete Net-B 
+Dec 16 11:54:05.827 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 16 11:54:06.109 HYPERVISOR: Stopped.
+Dec 16 11:54:06.109 GENERAL: reset done.
