@@ -1,16 +1,34 @@
-Dec 16 07:06:30.174 HYPERVISOR: Release 0.2.18-amd64/Linux (tag 2018033112)
-Dec 16 07:06:30.174 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 58549.
-Dec 16 07:06:30.182 HYPERVISOR: exec_cmd: hypervisor version 
-Dec 16 07:06:30.183 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/mpls-te-topology-/project-files/dynamips 
-Dec 16 07:06:30.183 GENERAL: working_dir=/home/student/GNS3/projects/mpls-te-topology-/project-files/dynamips
-Dec 16 07:06:30.183 HYPERVISOR: exec_cmd: ethsw create Ethernetswitch-2 
-Dec 16 07:32:49.064 HYPERVISOR: exec_cmd: nio create_udp udp-2d9abc11-c5b8-4e94-bb6a-5027a1945aac 10024 127.0.0.1 10023 
-Dec 16 07:32:49.065 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-2 udp-2d9abc11-c5b8-4e94-bb6a-5027a1945aac 
-Dec 16 07:32:49.073 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-2 udp-2d9abc11-c5b8-4e94-bb6a-5027a1945aac 1 
-Dec 16 07:32:55.744 HYPERVISOR: exec_cmd: nio create_udp udp-7a6c9630-1db8-4a5b-81c6-21b5b979f1d9 10025 127.0.0.1 10026 
-Dec 16 07:32:55.744 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-2 udp-7a6c9630-1db8-4a5b-81c6-21b5b979f1d9 
-Dec 16 07:32:55.747 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-2 udp-7a6c9630-1db8-4a5b-81c6-21b5b979f1d9 1 
-Dec 16 07:35:07.741 HYPERVISOR: exec_cmd: ethsw delete Ethernetswitch-2 
-Dec 16 07:35:07.762 HYPERVISOR: exec_cmd: hypervisor stop 
-Dec 16 07:35:07.842 HYPERVISOR: Stopped.
-Dec 16 07:35:07.843 GENERAL: reset done.
+Dec 16 07:50:35.763 HYPERVISOR: Release 0.2.18-amd64/Linux (tag 2018033112)
+Dec 16 07:50:35.763 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 34287.
+Dec 16 07:50:35.775 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 16 07:50:35.775 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips 
+Dec 16 07:50:35.776 GENERAL: working_dir=/home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips
+Dec 16 07:50:35.776 HYPERVISOR: exec_cmd: ethsw create Ethernetswitch-2 
+Dec 16 07:50:44.975 HYPERVISOR: exec_cmd: nio create_udp udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 10023 127.0.0.1 10022 
+Dec 16 07:50:44.975 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 
+Dec 16 07:50:44.980 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:50:45.006 HYPERVISOR: exec_cmd: nio create_udp udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 10024 127.0.0.1 10025 
+Dec 16 07:50:45.006 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 
+Dec 16 07:50:45.026 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:52:29.806 HYPERVISOR: exec_cmd: ethsw rename Ethernetswitch-2 Net2 
+Dec 16 07:52:29.807 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:52:29.809 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:52:29.846 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:52:29.846 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:52:29.883 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:52:29.883 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:52:29.914 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:52:29.914 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:53:04.942 HYPERVISOR: exec_cmd: ethsw rename Net2 Net-C 
+Dec 16 07:53:04.942 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:53:04.943 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:53:04.979 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:53:04.980 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:53:05.013 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:53:05.014 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:53:05.049 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:53:05.049 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:54:14.041 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:54:14.042 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 07:54:17.012 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
+Dec 16 07:54:17.013 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
