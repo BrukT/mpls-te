@@ -1,34 +1,12 @@
-Dec 16 07:50:35.763 HYPERVISOR: Release 0.2.18-amd64/Linux (tag 2018033112)
-Dec 16 07:50:35.763 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 34287.
-Dec 16 07:50:35.775 HYPERVISOR: exec_cmd: hypervisor version 
-Dec 16 07:50:35.775 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips 
-Dec 16 07:50:35.776 GENERAL: working_dir=/home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips
-Dec 16 07:50:35.776 HYPERVISOR: exec_cmd: ethsw create Ethernetswitch-2 
-Dec 16 07:50:44.975 HYPERVISOR: exec_cmd: nio create_udp udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 10023 127.0.0.1 10022 
-Dec 16 07:50:44.975 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 
-Dec 16 07:50:44.980 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:50:45.006 HYPERVISOR: exec_cmd: nio create_udp udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 10024 127.0.0.1 10025 
-Dec 16 07:50:45.006 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 
-Dec 16 07:50:45.026 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:52:29.806 HYPERVISOR: exec_cmd: ethsw rename Ethernetswitch-2 Net2 
-Dec 16 07:52:29.807 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:52:29.809 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:52:29.846 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:52:29.846 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:52:29.883 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:52:29.883 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:52:29.914 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:52:29.914 HYPERVISOR: exec_cmd: ethsw set_access_port Net2 udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:53:04.942 HYPERVISOR: exec_cmd: ethsw rename Net2 Net-C 
-Dec 16 07:53:04.942 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:53:04.943 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:53:04.979 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:53:04.980 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:53:05.013 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:53:05.014 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:53:05.049 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:53:05.049 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:54:14.041 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:54:14.042 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
-Dec 16 07:54:17.012 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-a0316e24-2e2a-4c73-a8ee-c24d8fc969b8 1 
-Dec 16 07:54:17.013 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-9a37a99f-8500-40dc-92da-836c8b94ddd1 1 
+Dec 16 10:12:47.913 HYPERVISOR: Release 0.2.18-amd64/Linux (tag 2018033112)
+Dec 16 10:12:47.913 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 48223.
+Dec 16 10:12:47.923 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 16 10:12:47.923 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips 
+Dec 16 10:12:47.923 GENERAL: working_dir=/home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips
+Dec 16 10:12:47.924 HYPERVISOR: exec_cmd: ethsw create Net-C 
+Dec 16 10:12:58.947 HYPERVISOR: exec_cmd: nio create_udp udp-e8d757b3-2d76-404a-a83e-90f9bd775178 10023 127.0.0.1 10022 
+Dec 16 10:12:58.947 HYPERVISOR: exec_cmd: ethsw add_nio Net-C udp-e8d757b3-2d76-404a-a83e-90f9bd775178 
+Dec 16 10:12:58.956 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-e8d757b3-2d76-404a-a83e-90f9bd775178 1 
+Dec 16 10:12:58.975 HYPERVISOR: exec_cmd: nio create_udp udp-c3fe6d40-7e02-4be7-aa61-973be6a3dfaa 10024 127.0.0.1 10025 
+Dec 16 10:12:58.975 HYPERVISOR: exec_cmd: ethsw add_nio Net-C udp-c3fe6d40-7e02-4be7-aa61-973be6a3dfaa 
+Dec 16 10:12:58.978 HYPERVISOR: exec_cmd: ethsw set_access_port Net-C udp-c3fe6d40-7e02-4be7-aa61-973be6a3dfaa 1 

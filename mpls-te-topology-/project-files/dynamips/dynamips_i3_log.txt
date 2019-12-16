@@ -1,25 +1,15 @@
-Dec 16 07:50:44.481 HYPERVISOR: Release 0.2.18-amd64/Linux (tag 2018033112)
-Dec 16 07:50:44.482 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 40171.
-Dec 16 07:50:44.491 HYPERVISOR: exec_cmd: hypervisor version 
-Dec 16 07:50:44.492 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips 
-Dec 16 07:50:44.492 GENERAL: working_dir=/home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips
-Dec 16 07:50:44.492 HYPERVISOR: exec_cmd: ethsw create Ethernetswitch-3 
-Dec 16 07:50:44.519 HYPERVISOR: exec_cmd: nio create_udp udp-681342c7-f4cf-4f2f-b268-816ddd1b908a 10000 127.0.0.1 10001 
-Dec 16 07:50:44.520 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-3 udp-681342c7-f4cf-4f2f-b268-816ddd1b908a 
-Dec 16 07:50:44.542 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-3 udp-681342c7-f4cf-4f2f-b268-816ddd1b908a 1 
-Dec 16 07:50:44.586 HYPERVISOR: exec_cmd: nio create_udp udp-f96e6d5c-8ca6-4ab9-95cd-384e320cc54b 10002 127.0.0.1 10003 
-Dec 16 07:50:44.586 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-3 udp-f96e6d5c-8ca6-4ab9-95cd-384e320cc54b 
-Dec 16 07:50:44.604 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-3 udp-f96e6d5c-8ca6-4ab9-95cd-384e320cc54b 1 
-Dec 16 07:50:44.636 HYPERVISOR: exec_cmd: nio create_udp udp-4b86c651-b6bb-4157-9707-644bd07cab35 10004 127.0.0.1 10005 
-Dec 16 07:50:44.636 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-3 udp-4b86c651-b6bb-4157-9707-644bd07cab35 
-Dec 16 07:50:44.644 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-3 udp-4b86c651-b6bb-4157-9707-644bd07cab35 1 
-Dec 16 07:53:10.488 HYPERVISOR: exec_cmd: ethsw rename Ethernetswitch-3 Net-B 
-Dec 16 07:53:10.489 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-681342c7-f4cf-4f2f-b268-816ddd1b908a 1 
-Dec 16 07:53:10.489 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-f96e6d5c-8ca6-4ab9-95cd-384e320cc54b 1 
-Dec 16 07:53:10.490 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-4b86c651-b6bb-4157-9707-644bd07cab35 1 
-Dec 16 07:53:10.529 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-681342c7-f4cf-4f2f-b268-816ddd1b908a 1 
-Dec 16 07:53:10.529 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-f96e6d5c-8ca6-4ab9-95cd-384e320cc54b 1 
-Dec 16 07:53:10.530 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-4b86c651-b6bb-4157-9707-644bd07cab35 1 
-Dec 16 07:53:10.662 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-681342c7-f4cf-4f2f-b268-816ddd1b908a 1 
-Dec 16 07:53:10.663 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-f96e6d5c-8ca6-4ab9-95cd-384e320cc54b 1 
-Dec 16 07:53:10.665 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-4b86c651-b6bb-4157-9707-644bd07cab35 1 
+Dec 16 10:12:58.544 HYPERVISOR: Release 0.2.18-amd64/Linux (tag 2018033112)
+Dec 16 10:12:58.544 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 39545.
+Dec 16 10:12:58.552 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 16 10:12:58.553 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips 
+Dec 16 10:12:58.553 GENERAL: working_dir=/home/student/GNS3/projects/mpls-te/mpls-te-topology-/project-files/dynamips
+Dec 16 10:12:58.554 HYPERVISOR: exec_cmd: ethsw create Net-B 
+Dec 16 10:12:58.586 HYPERVISOR: exec_cmd: nio create_udp udp-ffb2178b-562b-4564-9fe0-d085afc564d5 10000 127.0.0.1 10001 
+Dec 16 10:12:58.587 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-ffb2178b-562b-4564-9fe0-d085afc564d5 
+Dec 16 10:12:58.600 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-ffb2178b-562b-4564-9fe0-d085afc564d5 1 
+Dec 16 10:12:58.624 HYPERVISOR: exec_cmd: nio create_udp udp-692f918e-a0e2-4d08-81d2-87fa36b7f22d 10002 127.0.0.1 10003 
+Dec 16 10:12:58.625 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-692f918e-a0e2-4d08-81d2-87fa36b7f22d 
+Dec 16 10:12:58.640 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-692f918e-a0e2-4d08-81d2-87fa36b7f22d 1 
+Dec 16 10:12:58.678 HYPERVISOR: exec_cmd: nio create_udp udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 10004 127.0.0.1 10005 
+Dec 16 10:12:58.679 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 
+Dec 16 10:12:58.680 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 1 
