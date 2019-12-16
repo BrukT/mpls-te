@@ -13,3 +13,7 @@ Dec 16 10:12:58.640 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-692f91
 Dec 16 10:12:58.678 HYPERVISOR: exec_cmd: nio create_udp udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 10004 127.0.0.1 10005 
 Dec 16 10:12:58.679 HYPERVISOR: exec_cmd: ethsw add_nio Net-B udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 
 Dec 16 10:12:58.680 HYPERVISOR: exec_cmd: ethsw set_access_port Net-B udp-d17db73d-d5a1-45ce-9a5a-e3ad419a5583 1 
+Dec 16 11:40:24.782 HYPERVISOR: exec_cmd: ethsw delete Net-B 
+Dec 16 11:40:24.833 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 16 11:40:25.235 HYPERVISOR: Stopped.
+Dec 16 11:40:25.236 GENERAL: reset done.
