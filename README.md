@@ -1,10 +1,10 @@
-# QoS-diffserv
+# DiffServ-QoS
 Traffic Engineering Using **Differentiated Service Code Point(DSCP)** protocol
 
 In order to clone this repository you have to have the Git Large File Storage installed on your machine. also you have to instantiate your working directory with git lfs by:   
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ```git lfs install```
 
-The network is constructed and configured with GNS3 ide. 
+The network is constructed and configured with GNS3 ide. It is recommended to use the same software for testing it. 
 
 use the follwing commands on the end point consols to test the resulting traffic load on router 5.
 
