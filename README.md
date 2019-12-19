@@ -181,7 +181,7 @@ The `<data-size>` can be set to various ranges from small to large to see the ru
 
 ## Clone repository
 
-In order to clone this repository you have to have the Git Large File Storage installed on your machine. also you have to instantiate your working directory with git lfs by: 
+In order to clone this repository you need to have the Git Large File Storage installed on your machine. also you have to instantiate your working directory with git lfs by: 
 
 ```
 git lfs install
