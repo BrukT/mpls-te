@@ -60,24 +60,24 @@ On `R1` we defined an ACL with id `121` for traffic from `A1` to `B1`:
 
 ```
 R1(config)# access-list 121 permit ip host 10.0.1.2 host 10.0.2.2
-R1(config-cmap)# class-map match-all A1B1
-R1(config-cmap-c)# match access-group 121
+R1(config)# class-map match-all A1B1
+R1(config-cmap)# match access-group 121
 ```
 
 and an ACL with id `122` for traffic from `A2` to `B2`:
 
 ```
 R1(config)# access-list 122 permit ip host 10.0.1.3 host 10.0.2.3
-R1(config-cmap)# class-map match-all A2B2
-R1(config-cmap-c)# match access-group 122
+R1(config)# class-map match-all A2B2
+R1(config-cmap)# match access-group 122
 ```
 
 On `R2` we defined an ACL with id `121` for traffic from `C1` to `B1`:
 
 ```
 R2(config)# access-list 121 permit ip host 10.0.3.2 host 10.0.2.2
-R2(config-cmap)# class-map match-all C1B1
-R2(config-cmap-c)# match access-group 121
+R2(config)# class-map match-all C1B1
+R2(config-cmap)# match access-group 121
 ```
 
 ### Packet Marking
@@ -85,35 +85,104 @@ R2(config-cmap-c)# match access-group 121
 For differentiating the two types of flow we assigned different _Per Hob Behavior_ as shown in the following table:
 
 | Priority | PHB | DSCP |
---- | ---
+--- | --- | ---
 High | EF | 46
 Low | AF13 | 14
 
-In the relative routers we defined marking for the classes like this:
+In the relative routers we defined marking for the classes. On `R1` for high-priority flow:
 
+```
+R1(config)# policy-map E00
+R1(config-pmap)# class A1B1
+R1(config-pmap-c)#set ip dscp ef
+```
 
+and for low-priority flow:
+
+```
+R1(config)# policy-map E00
+R1(config-pmap)# class A2B2
+R1(config-pmap-c)#set ip dscp af13
+```
+
+On `R2`:
+
+```
+R2(config)# policy-map E00
+R2(config-pmap)# class C1B1
+R2(config-pmap-c)#set ip dscp ef
+```
+
+Then we mapped in _input_ the defined policies to the `ethernet 0/0` interfaces on both routers:
+
+```
+R(config)# interface ethernet 0/0
+R(config-if)# service-policy input E00
+```
+
+### Packet Policing
+
+In order to meet the requirements about the excess traffic we defined policing rules by means of _Committed Access Rate_ (CAR) at the input of `R1` and `R2` on `ethernet 0/0` interface.
+
+On `R1` and `R2`, for `A1` to `B1` and `C1` to `B1` traffic, respectively, defined by ACL `121`, we have to downgrade the excess traffic to low-priority:
+
+```
+R(config-if)# rate-limit input access-group 121 900000 5000 5000 conform-action continue exceed-action set-dscp-transmit 14
+```
+
+and only on `R1` for `A2` to `B2` traffic defined by ACL `122` we have to drop packets belonging to exceeded traffic:
+
+```
+R1(config-if)# rate-limit input access-group 122 1200000 5000 5000 conform-action continue exceed-action set-dscp-transmit drop
+``` 
+
+### Class-based Weighted Fair Queuing
+
+Finally we configured all routers in the network in order to make them able to classify different traffic classes based on DSCP and to allocate the wanted bandwidth for each of them.
+
+Since we have to reserve at least 60% of bandwidth for the high-priority flows we need only to match `EF` PHB.
+For classifying the flow based on DSCP:
+
+```
+R(config)# class-map match-all HIGH
+R(config-cmap)# match dscp ef
+```
+
+For allocating 60% of bandwidth:
+
+```
+R(config)# policy-map OUT
+R(config-pmap)# class HIGH
+R(config-pmap-c)# bandwidth percent 60
+```
+
+For associating the policy to every `serial` interface:
+
+```
+R(config-if)# service-policy output OUT
+```
 
 ## Clone repository
 
-In order to clone this repository you have to have the Git Large File Storage installed on your machine. also you have to instantiate your working directory with git lfs by:   
+In order to clone this repository you have to have the Git Large File Storage installed on your machine. also you have to instantiate your working directory with git lfs by: 
+
 ```
 git lfs install
 ```
-
  
 ## Troubleshooting
 
-Use the follwing commands on the end point consols to test the resulting traffic load on router 5.
+Use the following commands on the end-point consoles to test the resulting traffic load.
 
-on servers:   
+On servers:   
 ```
 iperf -u -s -i 1
 ```
 
-on clients:  
+On clients:  
 
 ``` 
-iperf -u -c <server-ip-to-communicate> -t 20 -b <data-size> -i 1 
+iperf -u -c <server-ip-address> -i 1 -b <data-size> -t 30
 ```
 
-The data size above can be set to various ranges from small to large to see the run time bandwidth of each flows.
+The `<data-size>` can be set to various ranges from small to large to see the run time bandwidth of each flow.
