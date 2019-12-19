@@ -2,7 +2,7 @@
 
 ## Network Architecture
 
-The network is built and configured with GNS3 ide. It is recommended to use the same software for testing it. 
+The network is built and configured with [GNS3](https://www.gns3.com) ide. It is recommended to use the same software for testing it. 
 
 [!Scenario]
 
@@ -16,13 +16,13 @@ C1 | B1 | High | 0.9Mbps
 
 ### Goals
 
-- each flow conforms to the characteristics of Table. For high-priority flows, the excess traffic is downgraded to low priority; for low-priority flows, the excess traffic is dropped.
+- Each flow conforms to the characteristics of the above able. For high-priority flows, the excess traffic is downgraded to low priority; for low-priority flows, the excess traffic is dropped.
 
 - Each high-priority flow is granted at worst 60% of the bandwidth for the link it traverses in the core network.
 
 ## Configuration
 
-The following Table represents the address assignation for the networks:
+The following table represents the address assignation for the networks:
 
 | Net | Address | Subnet mask |
 --- | --- | ---
@@ -161,14 +161,6 @@ For associating the policy to every `serial` interface:
 ```
 R(config-if)# service-policy output OUT
 ```
-
-## Clone repository
-
-In order to clone this repository you have to have the Git Large File Storage installed on your machine. also you have to instantiate your working directory with git lfs by: 
-
-```
-git lfs install
-```
  
 ## Troubleshooting
 
@@ -186,3 +178,11 @@ iperf -u -c <server-ip-address> -i 1 -b <data-size> -t 30
 ```
 
 The `<data-size>` can be set to various ranges from small to large to see the run time bandwidth of each flow.
+
+## Clone repository
+
+In order to clone this repository you have to have the Git Large File Storage installed on your machine. also you have to instantiate your working directory with git lfs by: 
+
+```
+git lfs install
+```
