@@ -2,7 +2,7 @@ docker/* filter=lfs diff=lfs merge=lfs -text
 images/* filter=lfs diff=lfs merge=lfs -text
 iou/* filter=lfs diff=lfs merge=lfs -text
 dynamips/* filter=lfs diff=lfs merge=lfs -text
-mpls-te-topology-/mpls-te-topology-.gns3 filter=lfs diff=lfs merge=lfs -text
-mpls-te-topology-/* filter=lfs diff=lfs merge=lfs -text
-mpls-te-topology-/project-files/captures/R1_Serial1* filter=lfs diff=lfs merge=lfs -text
-mpls-te-topology-/project-files/captures/* filter=lfs diff=lfs merge=lfs -text
+gns3/net.gns3 filter=lfs diff=lfs merge=lfs -text
+gns3/* filter=lfs diff=lfs merge=lfs -text
+gns3/project-files/captures/R1_Serial1* filter=lfs diff=lfs merge=lfs -text
+gns3/project-files/captures/* filter=lfs diff=lfs merge=lfs -text
