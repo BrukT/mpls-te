@@ -4,7 +4,7 @@
 
 The network is built and configured with [GNS3](https://www.gns3.com) ide. It is recommended to use the same software for testing it. 
 
-[!Scenario](/doc/img/gns3.png)
+![Scenario](/doc/img/gns3.png)
 
 The above scenario shows three networks interconnected through a core network of 5 routers. Each network contains either _Client_ nodes (`A1`, `A2`, `C1`) or _Server_ nodes (`B1`, `B2`). Clients send data to servers and have the flow characteristics that are shown in the following table:
 
