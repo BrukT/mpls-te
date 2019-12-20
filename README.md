@@ -4,7 +4,7 @@
 
 The network is built and configured with [GNS3](https://www.gns3.com) ide. It is recommended to use the same software for testing it. 
 
-[!Scenario]
+[!Scenario](/doc/img/gns3.png)
 
 The above scenario shows three networks interconnected through a core network of 5 routers. Each network contains either _Client_ nodes (`A1`, `A2`, `C1`) or _Server_ nodes (`B1`, `B2`). Clients send data to servers and have the flow characteristics that are shown in the following table:
 
@@ -29,11 +29,11 @@ The following table represents the address assignation for the networks:
 A | 10.0.1.0 | 255.255.255.0
 B | 10.0.2.0 | 255.255.255.0
 C | 10.0.3.0 | 255.255.255.0
-R1-R2 | 172.16.0.0 | 255.255.255.252
-R1-R3 | 172.16.4.0 | 255.255.255.252
-R2-R5 | 172.16.8.0 | 255.255.255.252
-R3-R4 | 172.16.12.0 | 255.255.255.252
-R4-R5 | 172.16.16.0 | 255.255.255.252
+R1-R3 | 172.16.0.0 | 255.255.255.252
+R1-R2 | 172.16.4.0 | 255.255.255.252
+R3-R4 | 172.16.8.0 | 255.255.255.252
+R4-R5 | 172.16.12.0 | 255.255.255.252
+R2-R5 | 172.16.16.0 | 255.255.255.252
 
 For the IPs assigned to the router interfaces you can refer to the picture shown above.
 
@@ -181,7 +181,7 @@ The `<data-size>` can be set to various ranges from small to large to see the ru
 
 ## Clone repository
 
-In order to clone this repository you need to have the Git Large File Storage installed on your machine. also you have to instantiate your working directory with git lfs by: 
+In order to clone this repository you need to have the Git Large File Storage installed on your machine. Also you have to instantiate your working directory with `git lfs` by: 
 
 ```
 git lfs install
