@@ -43,9 +43,9 @@ Futhermore, for each router we configured the `Loopback0` interface which will b
 
 ### OSPF
 
-We chose OSPF as routing protocol since it is ready for the implementation of other services such as MPLS-TE (but it is not our goal right now).
+We chose OSPF as routing protocol since it is ready for the implementation of MPLS-TE.
 
-Every router has been configured in order to be able to announce all the network to which it is attached and we used the following IOS commands:
+Every router has been configured in order to be able to announce all the network to which it is attached, included the `Loopback0`:
 
 ```
 R(config)# router ospf 1
@@ -185,4 +185,10 @@ In order to clone this repository you need to have the Git Large File Storage in
 
 ```
 git lfs install
+```
+
+For pulling for the first time the all content of the repo after the clone, you need to issue:
+
+```
+git lfs pull
 ```
