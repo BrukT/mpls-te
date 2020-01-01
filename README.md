@@ -1,4 +1,4 @@
-# Differentiated Service Architecture for QoS support
+# Differentiated Service Architecture using MPLS for QoS support 
 
 ## Network Architecture
 
