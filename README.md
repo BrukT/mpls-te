@@ -39,7 +39,15 @@ For the IPs assigned to the router interfaces you can refer to the picture shown
 
 In order to achive the flow characteristics, we decided to configure the IP address of hosts in `Network-A` and `Network-B` statically. Instead we configured DHCP service on `R2` since it has only one host in its subnetwork.
 
-Futhermore, for each router we configured the `Loopback0` interface which will be used as `router-id` attribute in the OSPF protocol.
+Futhermore, as shown in the next table, for each router we configured the `Loopback0` interface with IP mask of 32 bits, which will be used as `router-id` attribute in the OSPF protocol.
+
+| Router | Loopback IP address |
+--- | ---
+R1 | 172.16.1.1
+R2 | 172.16.1.2
+R3 | 172.16.1.3
+R4 | 172.16.1.4
+R5 | 172.16.1.5
 
 ### OSPF
 
@@ -168,7 +176,7 @@ Since now, every traffic from `Network-A` to `Network-B` and from `Network-C` to
 
 Furthermore the links involving `R1-R3-R4-R5` are never used since they represent the longest path for every traffic among the three stub networks.
 
-Thus, for meeting the bandwidth requirement and avoiding the under-utilization of some network parts, we used _MPLS-TE_ which allow us to support constrained-based routing.
+Thus, for meeting the bandwidth requirement and avoiding the under-utilization of some network parts, we used _MPLS-TE_ which allows us to support constrained-based routing.
 
 First, we enabled _Cisco Express Forwarding_ (CEF) and _tag switching_ on every interface of every router involved, in our case all of them but `R2`:
 
