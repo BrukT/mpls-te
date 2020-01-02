@@ -1,4 +1,4 @@
-# Differentiated Service Architecture for QoS support
+# Differentiated Service Architecture using MPLS for QoS support 
 
 ## Network Architecture
 
@@ -39,17 +39,25 @@ For the IPs assigned to the router interfaces you can refer to the picture shown
 
 In order to achive the flow characteristics, we decided to configure the IP address of hosts in `Network-A` and `Network-B` statically. Instead we configured DHCP service on `R2` since it has only one host in its subnetwork.
 
-Futhermore, for each router we configured the `Loopback0` interface which will be used as `router-id` attribute in the OSPF protocol.
+Futhermore, as shown in the next table, for each router we configured the `Loopback0` interface with IP mask of 32 bits, which will be used as `router-id` attribute in the OSPF protocol.
+
+| Router | Loopback IP address |
+--- | ---
+R1 | 172.16.1.1
+R2 | 172.16.1.2
+R3 | 172.16.1.3
+R4 | 172.16.1.4
+R5 | 172.16.1.5
 
 ### OSPF
 
-We chose OSPF as routing protocol since it is ready for the implementation of MPLS-TE.
+We chose OSPF as routing protocol since it is ready for the implementation of _MPLS-TE_.
 
 Every router has been configured in order to be able to announce all the network to which it is attached, included the `Loopback0`:
 
 ```
 R(config)# router ospf 1
-R(config)# network <network-address> <wildcard-mask> area 0
+R(config-router)# network <network-address> <wildcard-mask> area 0
 ```
 
 ### Packet Classification
@@ -160,6 +168,68 @@ For associating the policy to every `serial` interface:
 
 ```
 R(config-if)# service-policy output OUT
+```
+
+### MPLS-TE
+
+Since now, every traffic from `Network-A` to `Network-B` and from `Network-C` to `Network-B` is passing through `R2-R5` link based on OSPF best path. But by requirements, we have to guarantee at least 60% of bandwidth to high-priority flows. If both of them share `R2-R5` link at the same moment, this requirement can not be met.
+
+Furthermore the links involving `R1-R3-R4-R5` are never used since they represent the longest path for every traffic among the three stub networks.
+
+Thus, for meeting the bandwidth requirement and avoiding the under-utilization of some network parts, we used _MPLS-TE_ which allows us to support constrained-based routing.
+
+First, we enabled _Cisco Express Forwarding_ (CEF) and _tag switching_ on every interface of every router involved, in our case all of them but `R2`:
+
+```
+R(config)# ip cef
+R(config)# interface <interf>
+R(config-if)# mpls ip
+```
+
+Then we made routers able to create _traffic engineering tunnels_ (_MPLS Label Switched Paths_) to steer traffic through the network allowing links not included in the shortes path to be used:
+
+1. Enable tunnels creation:
+
+```
+R(config)# mpls traffic-eng tunnels
+```
+
+2. Enable TE extension on OSPF:
+
+```
+R(config)# router ospf 1
+R(config-router)# mpls traffic-eng area 1
+R(config-router)# mpls traffic-eng router-id Loopback0
+```
+
+3. Enable MPLS tunnel creation on the interfaces specifying the reservable bandwidth and the largest reservable flow on the interface:
+
+```
+R(config)# interface <interf>
+R(config-if)# mpls traffic-eng tunnels
+R(config-if)# ip rsvp bandwidth 512 512
+```
+
+Finally, on the ingress router `R1`, we created `Tunnel0` with `172.16.1.5` as destination and the explicit path:
+
+```
+R1(config)# interface Tunnel1
+R1(config-if)# ip unnumbered Loopback0
+R1(config-if)# tunnel destination 172.16.1.5
+R1(config-if)# tunnel mode mpls traffic-eng
+R1(config-if)# tunnel mpls traffic-eng autoroute announce
+R1(config-if)# tunnel mpls traffic-eng priority 2 2
+R1(config-if)# tunnel mpls traffic-eng path-option 1 explicit name longpath
+R1(config-if)# tunnel mpls traffic-eng path-option 2 dynamic
+```
+
+The explict path `longpath` has been defined as follows:
+
+```
+R1(config)# ip explict-path name longpath enable
+R1(cfg-ip-expl-path)# next-address 172.16.0.2
+R1(cfg-ip-expl-path)# next-address 172.16.0.10
+R1(cfg-ip-expl-path)# next-address 172.16.0.14
 ```
  
 ## Troubleshooting
