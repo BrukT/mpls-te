@@ -210,20 +210,7 @@ R(config-if)# mpls traffic-eng tunnels
 R(config-if)# ip rsvp bandwidth 512 512
 ```
 
-Finally, on the ingress router `R1`, we created `Tunnel0`, whose path is dynamically selected, with `172.16.1.5` (loopback inerface of `R5`) as destination and bandwidth 1.2Mbps:
-
-```
-R1(config)# interface Tunnel0
-R1(config-if)# ip unnumbered Loopback0
-R1(config-if)# tunnel destination 172.16.1.5
-R1(config-if)# tunnel mode mpls traffic-eng
-R1(config-if)# tunnel mpls traffic-eng autoroute announce
-R1(config-if)# tunnel mpls traffic-eng priority 2 2
-R1(config-if)# tunnel mpls traffic-eng bandwidth 1200
-R1(config-if)# tunnel mpls traffic-eng path-option 1 dynamic
-```
-
-and `Tunnel1` with the same characteristics of `Tunnel0` but adding an explicit path:
+Finally, on the ingress router `R1`, we created `Tunnel0` with `172.16.1.5` as destination and the explicit path:
 
 ```
 R1(config)# interface Tunnel1
@@ -232,7 +219,6 @@ R1(config-if)# tunnel destination 172.16.1.5
 R1(config-if)# tunnel mode mpls traffic-eng
 R1(config-if)# tunnel mpls traffic-eng autoroute announce
 R1(config-if)# tunnel mpls traffic-eng priority 2 2
-R1(config-if)# tunnel mpls traffic-eng bandwidth 1200
 R1(config-if)# tunnel mpls traffic-eng path-option 1 explicit name longpath
 R1(config-if)# tunnel mpls traffic-eng path-option 2 dynamic
 ```
