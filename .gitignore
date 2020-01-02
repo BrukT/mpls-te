@@ -2,3 +2,4 @@
 *.log
 /gns3/project-files/captures/*
 /gns3/project-files/docker/*
+/gns3/project-files/dynamips/*
