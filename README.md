@@ -172,7 +172,7 @@ R(config-if)# service-policy output OUT
 
 ### MPLS-TE
 
-Since now, every traffic from `Network-A` to `Network-B` and from `Network-C` to `Network-B` would pass from `R2-R5` link based on OSPF best path. But by requirements, we have to guarantee at least 60% of bandwidth to high-priority flows. If both of them share `R2-R5` link at the same moment, this requirement can not be met.
+Since now, every traffic from `Network-A` to `Network-B` and from `Network-C` to `Network-B` is passing through `R2-R5` link based on OSPF best path. But by requirements, we have to guarantee at least 60% of bandwidth to high-priority flows. If both of them share `R2-R5` link at the same moment, this requirement can not be met.
 
 Furthermore the links involving `R1-R3-R4-R5` are never used since they represent the longest path for every traffic among the three stub networks.
 
