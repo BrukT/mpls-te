@@ -231,6 +231,11 @@ R1(cfg-ip-expl-path)# next-address 172.16.0.2
 R1(cfg-ip-expl-path)# next-address 172.16.0.10
 R1(cfg-ip-expl-path)# next-address 172.16.0.14
 ```
+### Fulfilling the constraint
+send the traffic from `A2` to `B2` through `R2` by setting the routing of the specific destination and the next hop in `R1`.
+```
+R1(config)# ip route 10.0.2.3 255.255.255.255 172.16.0.6
+```
  
 ## Troubleshooting
 
