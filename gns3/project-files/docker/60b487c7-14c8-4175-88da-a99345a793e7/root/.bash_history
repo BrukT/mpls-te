@@ -29,3 +29,6 @@ iperf -u -c 10.0.2.2 -i 1 -b 1200k -t 10
 iperf -u -c 10.0.2.2 -i 1 -b 1100k -t 10
 iperf -u -c 10.0.2.2 -i 1 -b 1300k -t 10
 iperf -u -c 10.0.2.2 -i 1 -b 1100k -t 10
+iperf -u -c 10.0.2.2 -i 1 -b 100k -t 10
+iperf -u -c 10.0.2.2 -i 1 -b 100k -t 20
+iperf -u -c 10.0.2.2 -i 1 -b 1M -t 30
